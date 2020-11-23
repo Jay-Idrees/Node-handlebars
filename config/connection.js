@@ -4,19 +4,19 @@ const mysql = require("mysql");
 
 // Setting up connection config
 let connection;
-// Check if we have Jaws DB URL
+// Check if connection with Heroku JAWSDB database is feasable
 if (process.env.le) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 }
+//If not then connect with the MYSQL database at local host
 else {
     connection = mysql.createConnection({
         host: "localhost",
-        // Your port; if not 3306
         port: 3306,
-        // Your username
+        // MYSQL username
         user: "root",
-        // Your password
         password: "bootcamp",
+        //database name as per schema
         database: "burgers_db"
     });
 }
