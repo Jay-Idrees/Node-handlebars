@@ -72,3 +72,5 @@ function printQuestionMarks(num) {
     return arr.toString();
 }
 
+// Exporting orm
+module.exports = orm;
