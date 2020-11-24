@@ -33,7 +33,7 @@
                 devoured: $(this).data("devoured")
             };
         
-            // Send the PUT request.
+            // Maing ajax request using the put method to update devour status
             $.ajax("/api/burgers/" + id, {
                 type: "PUT",
                 data: newBurger
