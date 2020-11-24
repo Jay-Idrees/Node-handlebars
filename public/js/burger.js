@@ -23,7 +23,26 @@
         });
 
 
+        $(".devour-burger").on("click", function(event) {
 
-
+            // assigining an id
+            const id = $(this).data("id");
+        
+            // sending information regarding the burger dwvour status to API route for update
+            const newBurger = {
+                devoured: $(this).data("devoured")
+            };
+        
+            // Send the PUT request.
+            $.ajax("/api/burgers/" + id, {
+                type: "PUT",
+                data: newBurger
+            }).then(
+            function() {
+                console.log("devoured the burger");
+                // Reload the page to get the updated list
+                location.reload();
+            });
+        });
    
     });
