@@ -25,12 +25,12 @@ const orm={
         queryString += cols.toString();
         queryString += ") ";
         queryString += "VALUES (";
-        //
+        // This code will print ? the number of times there are observations in the column/variable of the table
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
     
         console.log(queryString);
-    
+    // Note that adding vals here is important because the vals will be the new vales inserted - in this case the burger choices by the user
         connection.query(queryString, vals, function(err, result) {
             if (err) {
                 throw err;
@@ -56,15 +56,19 @@ const orm={
         
             cb(result);
         });
-    }  
-
-
-
-
-
-
-
-
+    }
 
 
 }; //br close orm
+
+// Add question marks for completing the query
+function printQuestionMarks(num) {
+    var arr = [];
+  
+    for (var i = 0; i < num; i++) {
+      arr.push("?");
+    }
+  
+    return arr.toString();
+}
+
