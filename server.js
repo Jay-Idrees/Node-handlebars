@@ -2,7 +2,7 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 
-// Setting the Express App
+// Setting up the Express Server for JSON parsing of data
 const app = express();
 const PORT = process.env.PORT || 8080;
 
