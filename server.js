@@ -4,7 +4,7 @@ const exphbs = require("express-handlebars");
 
 // Setting up the Express Server for JSON parsing of data
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));

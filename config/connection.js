@@ -5,7 +5,7 @@ const mysql = require("mysql");
 // Setting up connection config
 let connection;
 // Check if connection with Heroku JAWSDB database is feasable
-if (process.env.le) {
+if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 }
 //If not then connect with the MYSQL database at local host
